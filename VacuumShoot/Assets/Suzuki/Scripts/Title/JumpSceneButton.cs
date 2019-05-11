@@ -28,6 +28,7 @@
 		{
 			// ガベージコレクション有効化
 			GarbageCollector.GCMode = GarbageCollector.Mode.Enabled;
+			// シーン遷移
 			SceneManager.LoadScene(sceneName);
 		}
 	}
