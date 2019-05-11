@@ -18,7 +18,7 @@ public class ShootStack : MonoBehaviour{
     void Update(){
         
     }
-
+    //リストの初期化
     public void Clear(){
 
         VacuumObjects.Clear();
@@ -27,7 +27,7 @@ public class ShootStack : MonoBehaviour{
     public void Stack(){
         shootStack++;
     }
-
+    //球を自分の位置に移動させ発射するスクリプト
     public IEnumerator Shoot(){
         length = VacuumObjects.Count;
         for (int i = 0; i < length; i++){
