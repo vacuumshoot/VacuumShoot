@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Suzuki/Scenes/ObjectScene.unity
     guid: 8c7522ff2b2db1443a684c22cfef5321
+  - enabled: 1
+    path: Assets/Scenes/Kunisada/Scenes/Kunisada.unity
+    guid: 8db98123ea88742249c26946010ce8ce
   m_configObjects: {}
