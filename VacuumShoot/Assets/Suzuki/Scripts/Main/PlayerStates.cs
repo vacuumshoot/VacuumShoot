@@ -9,6 +9,7 @@
 	/// </summary>
 	public class PlayerStates : MonoBehaviour
 	{
+		public int MaxHP;
 		public int HP;
 
 		// Start is called before the first frame update
