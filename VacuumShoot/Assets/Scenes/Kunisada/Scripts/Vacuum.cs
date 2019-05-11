@@ -6,6 +6,7 @@ public class Vacuum : MonoBehaviour{
 
     private GameObject vacuumObj = null;
     private GameObject player = null;
+    private GameObject stackObj = null;
     private float touchTime = 0;
     bool touch = false;
     bool vacuumItem = false;
@@ -43,6 +44,7 @@ public class Vacuum : MonoBehaviour{
         if (vacuumItem == true){
             //吸いとったアイテムを保持する処理
             player.GetComponent<ShootStack>().Stack();
+            player.GetComponent<ShootStack>().VacuumObjects.Add(stackObj);
             vacuumItem = false;
             vacuumTime = 1.0f;
         }
@@ -60,6 +62,7 @@ public class Vacuum : MonoBehaviour{
     private void OnTriggerStay(Collider col){
         if (col.CompareTag("VacuumObject")) {
             touch = true;
+            stackObj = col.gameObject;
         }
     }
     //吸い取り不可能
@@ -67,6 +70,7 @@ public class Vacuum : MonoBehaviour{
         if (col.CompareTag("VacuumObject")){
             touch = false;
             vacuumTime = 0;
+            stackObj = null;
         }
     }
 
