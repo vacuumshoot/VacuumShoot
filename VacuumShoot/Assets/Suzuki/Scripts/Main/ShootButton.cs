@@ -14,13 +14,13 @@
 		ShootStack player;
 		void Start()
 		{
-			player = GameObject.Find("Player").GetComponent<ShootStack>();
+			//player = GameObject.Find("Player").GetComponent<ShootStack>();
 		}
 
 		// 発射
 		public void OnClick()
 		{
-			player.Shoot();
+			//player.Shoot();
 			Debug.Log("Shoot");
 		}
 	}
