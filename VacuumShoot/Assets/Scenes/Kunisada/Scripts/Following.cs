@@ -16,8 +16,8 @@ public class Following : MonoBehaviour {
 	void LateUpdate () {
 		if(player != null){
 					Vector3 newPosition = transform.position;					//Playerを追従する
-					newPosition.x = player.transform.position.x + offset.x;											//カメラのx軸の位置
-					newPosition.y = player.transform.position.y + offset.y;									    //カメラのy軸の位置//1.64
+					newPosition.x = player.transform.position.x + offset.x;		//カメラのx軸の位置
+					newPosition.y = player.transform.position.y + offset.y;		//カメラのy軸の位置
 					newPosition.z = player.transform.position.z + offset.z;		//カメラのz軸の位置
 					transform.position = newPosition;
 			
