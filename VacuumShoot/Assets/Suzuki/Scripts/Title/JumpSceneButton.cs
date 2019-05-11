@@ -16,8 +16,8 @@
 	{
 		void Start()
 		{
-			// ガベージコレクション無効化
-			GarbageCollector.GCMode = GarbageCollector.Mode.Disabled;
+			// ガベージコレクション有効化
+			GarbageCollector.GCMode = GarbageCollector.Mode.Enabled;
 		}
 
 		/// <summary>
@@ -26,8 +26,8 @@
 		/// <param name="sceneName">移動先のシーン名</param>
 		public void OnClick(string sceneName)
 		{
-			// ガベージコレクション有効化
-			GarbageCollector.GCMode = GarbageCollector.Mode.Enabled;
+			// ガベージコレクション無効化
+			GarbageCollector.GCMode = GarbageCollector.Mode.Disabled;
 			// シーン遷移
 			SceneManager.LoadScene(sceneName);
 		}
