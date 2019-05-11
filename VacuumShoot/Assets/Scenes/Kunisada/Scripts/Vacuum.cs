@@ -43,8 +43,11 @@ public class Vacuum : MonoBehaviour{
 
         if (vacuumItem == true){
             //吸いとったアイテムを保持する処理
-            player.GetComponent<ShootStack>().Stack();
+            //player.GetComponent<ShootStack>().Stack();
             player.GetComponent<ShootStack>().VacuumObjects.Add(stackObj);
+            touch = false;
+            stackObj.SetActive(false);
+            stackObj = null;          
             vacuumItem = false;
             vacuumTime = 1.0f;
         }

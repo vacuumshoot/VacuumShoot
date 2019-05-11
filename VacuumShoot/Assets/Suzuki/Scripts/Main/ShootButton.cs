@@ -20,7 +20,8 @@
 		// 発射
 		public void OnClick()
 		{
-			player.Shoot();
+            
+			StartCoroutine(player.Shoot());
 			Debug.Log("Shoot");
 		}
 	}
