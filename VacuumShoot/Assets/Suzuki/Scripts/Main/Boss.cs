@@ -28,7 +28,7 @@
 		{
 			if(HP<=0)
 			{
-				Destroy(this);
+				Destroy(this.gameObject);
 			}
 		}
 	}

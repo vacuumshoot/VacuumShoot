@@ -17,6 +17,8 @@
 		GameObject bossObj;// ボスの情報
 		float elapsedTime = 0.0f;// 経過時間
 
+		bool attacked = false;// ボスと接触したか
+
 		// Start is called before the first frame update
 		void Start()
 		{
@@ -42,7 +44,7 @@
 			Vector3 vel = pos.normalized;
 
 			// 50秒経過したら終了
-			while (elapsedTime < 50.0f)
+			while (elapsedTime < 50.0f && !attacked)
 			{
 				transform.Translate(
 					vel.x * shootSpeed * Time.deltaTime,
@@ -54,8 +56,17 @@
 
 				yield return null;
 			}
+		}
 
-			Destroy(this);
+		void OnCollisionEnter(Collision collision)
+		{
+			if(collision.transform.tag=="Boss")
+			{
+				collision.gameObject.GetComponent<Boss>().HP -= attackPower;
+				attacked = true;
+				
+				Destroy(this.gameObject);
+			}
 		}
 	}
 
