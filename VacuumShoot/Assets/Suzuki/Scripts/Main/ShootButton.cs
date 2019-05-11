@@ -11,14 +11,16 @@
 	/// </summary>
 	public class ShootButton : MonoBehaviour
 	{
+		MovingPlayer player;
 		void Start()
 		{
-			
+			player = GameObject.Find("Player").GetComponent<MovingPlayer>();
 		}
 
+		// 発射
 		public void OnClick()
 		{
-
+			
 		}
 	}
 }
