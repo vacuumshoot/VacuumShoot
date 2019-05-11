@@ -729,6 +729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1210616318}
   - component: {fileID: 1210616319}
+  - component: {fileID: 1210616320}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -764,6 +765,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210616317}
   m_CullTransparentMesh: 0
+--- !u!114 &1210616320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210616317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5110f570eaf74f438866b5dcb8dd6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  _stick: {fileID: 1834829709}
+  _radius: 100
+  _shouldResetPosition: 1
+  _position: {x: 0, y: 0}
 --- !u!1 &1233984244
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234c6d09d1cd645f59c6dc1347bc2313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _joystick: {fileID: 1210616320}
   SPEED: 0.1
 --- !u!212 &1669198657
 SpriteRenderer:
