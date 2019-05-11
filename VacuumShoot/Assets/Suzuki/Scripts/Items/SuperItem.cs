@@ -14,7 +14,9 @@
 		public float vacuumTime;	// 吸い込み時間
 		public int attackPower;     // アイテムが与えるダメージ
 
-		public float shootSpeed;	// 発射時のスピード
+		public float shootSpeed;    // 発射時のスピード
+
+		GameObject bossObj;// ボスの情報
 
 		// Start is called before the first frame update
 		void Start()
@@ -29,18 +31,28 @@
 		}
 
 		// 仮想関数 子クラスはこれを継承する
-		protected virtual void VirtualStart() { }
+		protected virtual void VirtualStart()
+		{
+			bossObj = GameObject.Find("Boss");
+			StartCoroutine(Shoot());
+		}
 		protected virtual void VirtualUpdate() { }
 
 		public IEnumerator Shoot()
 		{
-			Vector3 pos = transform.position;
-			while (pos.y > -50.0f)
+			Vector3 pos = bossObj.transform.position - transform.position;
+			Vector3 vel = pos.normalized;
+			while (transform.position.y > -50.0f)
 			{
-				transform.Translate(0.0f, shootSpeed * Time.deltaTime, 0.0f);
+				transform.Translate(
+					vel.x * shootSpeed * Time.deltaTime,
+					vel.y * shootSpeed * Time.deltaTime,
+					vel.z * shootSpeed * Time.deltaTime);
 
 				yield return null;
 			}
+
+			Destroy(this);
 		}
 	}
 
