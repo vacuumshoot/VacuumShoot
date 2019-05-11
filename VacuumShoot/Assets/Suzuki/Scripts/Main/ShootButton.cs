@@ -20,7 +20,7 @@
 		// 発射
 		public void OnClick()
 		{
-			
+			Debug.Log("Shoot");
 		}
 	}
 }
