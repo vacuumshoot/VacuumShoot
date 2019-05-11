@@ -5,6 +5,7 @@
 	using UnityEngine;
 	using UnityEngine.UI;
 	using UnityEngine.SceneManagement;
+	using UnityEngine.Scripting;
 
 	/// <summary>
 	/// シーン遷移するボタンのスクリプト
@@ -15,7 +16,8 @@
 	{
 		void Start()
 		{
-			
+			// ガベージコレクション無効化
+			GarbageCollector.GCMode = GarbageCollector.Mode.Disabled;
 		}
 
 		/// <summary>
@@ -24,6 +26,8 @@
 		/// <param name="sceneName">移動先のシーン名</param>
 		public void OnClick(string sceneName)
 		{
+			// ガベージコレクション有効化
+			GarbageCollector.GCMode = GarbageCollector.Mode.Enabled;
 			SceneManager.LoadScene(sceneName);
 		}
 	}
