@@ -12,7 +12,9 @@
 	public class SuperItem : MonoBehaviour
 	{
 		public float vacuumTime;	// 吸い込み時間
-		public int attackPower;		// アイテムが与えるダメージ
+		public int attackPower;     // アイテムが与えるダメージ
+
+		public float shootSpeed;	// 発射時のスピード
 
 		// Start is called before the first frame update
 		void Start()
@@ -27,8 +29,19 @@
 		}
 
 		// 仮想関数 子クラスはこれを継承する
-		public virtual void VirtualStart() { }
-		public virtual void VirtualUpdate() { }
+		protected virtual void VirtualStart() { }
+		protected virtual void VirtualUpdate() { }
+
+		public IEnumerator Shoot()
+		{
+			Vector3 pos = transform.position;
+			while (pos.y > -50.0f)
+			{
+				transform.Translate(0.0f, shootSpeed * Time.deltaTime, 0.0f);
+
+				yield return null;
+			}
+		}
 	}
 
 }
