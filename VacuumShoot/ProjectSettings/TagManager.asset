@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Vacuum
   - VacuumObject
+  - Boss
   layers:
   - Default
   - TransparentFX
