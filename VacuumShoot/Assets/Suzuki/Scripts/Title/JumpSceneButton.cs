@@ -13,6 +13,11 @@
 	/// </summary>
 	public class JumpSceneButton : MonoBehaviour
 	{
+		void Start()
+		{
+			
+		}
+
 		/// <summary>
 		/// シーン遷移
 		/// </summary>
