@@ -34,7 +34,6 @@ public class ShootStack : MonoBehaviour{
             VacuumObjects[i].transform.position = this.transform.position;
             VacuumObjects[i].SetActive(true);
             StartCoroutine(VacuumObjects[i].GetComponent<Suzuki.SuperItem>().Shoot(force));
-            Rigidbody rb = VacuumObjects[i].GetComponent<Rigidbody>();  // rigidbodyを取得
             yield return new WaitForSeconds(0.5f);
         }
 
