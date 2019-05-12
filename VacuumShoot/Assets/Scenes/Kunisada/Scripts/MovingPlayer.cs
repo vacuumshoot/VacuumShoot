@@ -46,6 +46,15 @@ public class MovingPlayer : MonoBehaviour{
 		}
 
         transform.position = pos;
+
+		if (_joystick.Position.x >= 0.0f)
+		{
+			transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+		}
+		else
+		{
+			transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+		}
     }
 
 }

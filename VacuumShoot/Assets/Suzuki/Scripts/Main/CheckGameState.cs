@@ -34,12 +34,10 @@
 			if(player.HP<=0)
 			{
 				gameoverObj.SetActive(true);
-				Time.timeScale = 0.0f;
 			}
 			else if(boss.HP<=0)
 			{
 				clearObj.SetActive(true);
-				Time.timeScale = 0.0f;
 			}
 		}
 	}
