@@ -2547,8 +2547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a495f10944d440fd9b019a9bc87e17a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VacuumObjects:
-  - {fileID: 0}
+  VacuumObjects: []
   force: 50
 --- !u!114 &1612255542
 MonoBehaviour:
@@ -2951,7 +2950,7 @@ MonoBehaviour:
   Obj01: {fileID: 2140739576760187929, guid: 16dd7975c519a39488a9b32a68a17db4, type: 3}
   Obj02: {fileID: 2140739576760187929, guid: 16dd7975c519a39488a9b32a68a17db4, type: 3}
   movableArea: {fileID: 158732862}
-  summonsTime: 0
+  summonsTime: 5
 --- !u!4 &1904140229
 Transform:
   m_ObjectHideFlags: 0
