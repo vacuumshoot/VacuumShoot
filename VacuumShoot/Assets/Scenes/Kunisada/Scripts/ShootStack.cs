@@ -31,8 +31,8 @@ public class ShootStack : MonoBehaviour{
     public IEnumerator Shoot(){
         length = VacuumObjects.Count;
         for (int i = 0; i < length; i++){
-            VacuumObjects[i].transform.position = this.transform.position;
             VacuumObjects[i].SetActive(true);
+            VacuumObjects[i].transform.position = this.transform.position;
 
 			// 自身のコンボ数(順番を格納)
 			VacuumObjects[i].GetComponent<Suzuki.SuperItem>().thisCombo += i;

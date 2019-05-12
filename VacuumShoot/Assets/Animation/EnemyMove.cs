@@ -18,6 +18,11 @@ public class EnemyMove : MonoBehaviour {
     private bool _inverse = false;
 
     private void Update() {
+		if (enemy.vacuumTime <= 0.0f)
+		{
+			destroyed = true;
+		}
+
 		if (destroyed)
 			return;
 
@@ -38,10 +43,6 @@ public class EnemyMove : MonoBehaviour {
             transform.position = Vector3.Lerp(pos, targetPosition, t);
         }
 
-		if(enemy.vacuumTime<=0.0f)
-		{
-			destroyed = true;
-		}
     }
     // Use this for initialization
     void Start () {
