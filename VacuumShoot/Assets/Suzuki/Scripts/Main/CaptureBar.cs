@@ -10,7 +10,7 @@
 	/// </summary>
 	public class CaptureBar : MonoBehaviour
 	{
-		Enemy enemy;
+		SuperItem enemy;
 		Image captureBar;
 
 		float maxVacuumTime;
@@ -21,7 +21,7 @@
 			var parent = transform.parent;
 			while(parent!=null)
 			{
-				enemy = parent.GetComponent<Enemy>();
+				enemy = parent.GetComponent<SuperItem>();
 				if(enemy)
 				{
 					break;

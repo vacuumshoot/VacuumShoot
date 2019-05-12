@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ItemStack : MonoBehaviour
 {
 	public List<Image> stackGameObjects;// スタック先オブジェクトの場所格納
+	public Sprite nonSprite;// 何も格納されていない場合に入れる画像
 
 	ShootStack vacuumStack;
 
@@ -18,13 +19,22 @@ public class ItemStack : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		int count = vacuumStack.VacuumObjects.Count;
-		for(int i= 0;i<count;++i)
+		if (vacuumStack.VacuumObjects.Count == 0)
 		{
-			stackGameObjects[i].sprite =
-				vacuumStack.VacuumObjects[i].GetComponent<SpriteRenderer>().sprite;
+			foreach (var obj in stackGameObjects)
+			{
+				obj.sprite = nonSprite;
+			}
 		}
-
+		else
+		{
+			int count = vacuumStack.VacuumObjects.Count;
+			for (int i = 0; i < count; ++i)
+			{
+				stackGameObjects[i].sprite =
+					vacuumStack.VacuumObjects[i].GetComponent<SpriteRenderer>().sprite;
+			}
+		}
 	}
 
 	void ObjectStack()
