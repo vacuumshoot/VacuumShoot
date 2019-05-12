@@ -19,6 +19,8 @@
 
 		bool attacked = false;// ボスと接触したか
 
+		public int combo = 1;// 攻撃コンボ(順番)
+
 		// Start is called before the first frame update
 		void Start()
 		{

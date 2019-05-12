@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootStack : MonoBehaviour{
+	double[] damageUp = { 1, 1.1, 1.2, 1.2, 1.5, 1.6, 1.6, 1.8, 1.9, 2.5 };
+
     public List<GameObject> VacuumObjects = new List<GameObject>();
     private int length;
     [SerializeField]
     float force = 3.0f;
-    int shootStack = 0;
 
     // Start is called before the first frame update
     void Start(){
@@ -25,7 +26,6 @@ public class ShootStack : MonoBehaviour{
 
     }
     public void Stack(){
-        shootStack++;
     }
     //球を自分の位置に移動させ発射するスクリプト
     public IEnumerator Shoot(){
@@ -33,7 +33,15 @@ public class ShootStack : MonoBehaviour{
         for (int i = 0; i < length; i++){
             VacuumObjects[i].transform.position = this.transform.position;
             VacuumObjects[i].SetActive(true);
-            StartCoroutine(VacuumObjects[i].GetComponent<Suzuki.SuperItem>().Shoot(force));
+
+			// 自身のコンボ数(順番を格納)
+			VacuumObjects[i].GetComponent<Suzuki.SuperItem>().combo += i;
+			// コンボが上がるごとに与えるダメージが上昇する
+			int attack = VacuumObjects[i].GetComponent<Suzuki.SuperItem>().attackPower;
+			double up = damageUp[i] * attack;
+			VacuumObjects[i].GetComponent<Suzuki.SuperItem>().attackPower = (int)up;
+
+			StartCoroutine(VacuumObjects[i].GetComponent<Suzuki.SuperItem>().Shoot(force));
             yield return new WaitForSeconds(0.5f);
         }
 
