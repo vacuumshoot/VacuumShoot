@@ -6,10 +6,6 @@ public class Vacuum : MonoBehaviour{
 
     private GameObject vacuumObj = null;
     private GameObject player = null;
-    private GameObject stackObj = null;
-    private float touchTime = 0;
-    bool touch = false;
-    bool vacuumItem = false;
     private float vacuumTime = 0;
 
     // Start is called before the first frame update
@@ -20,37 +16,6 @@ public class Vacuum : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        //if (Input.GetMouseButton(0)){
-        //    //吸い取り時間の開始
-        //    if (touch == true){
-        //        vacuumTime -= Time.deltaTime;
-        //        Debug.Log(vacuumTime);
-        //        if (vacuumTime <= 0){
-        //            vacuumItem = true;
-        //        }
-        //    }
-
-        //    //長押しの判定
-        //    //if (touchTime >= 2){
-
-        //    //}
-
-        //}
-
-        //if (Input.GetMouseButtonUp(0)){
-        //    //touchTime = 0;
-        //}
-
-        //if (vacuumItem == true){
-        //    //吸いとったアイテムを保持する処理
-        //    //player.GetComponent<ShootStack>().Stack();
-        //    player.GetComponent<ShootStack>().VacuumObjects.Add(stackObj);
-        //    touch = false;
-        //    stackObj.SetActive(false);
-        //    stackObj = null;          
-        //    vacuumItem = false;
-        //    vacuumTime = 1.0f;
-        //}
 
     }
 
@@ -64,7 +29,10 @@ public class Vacuum : MonoBehaviour{
     //吸い取り可能
     private void OnTriggerStay(Collider col){
         if (col.CompareTag("VacuumObject")) {
-            touch = true;
+			// 10個以上吸い取らないようにする
+			if (player.GetComponent<ShootStack>().VacuumObjects.Count >= 10)
+				return;
+			
 			float vacuumT = col.GetComponent<Suzuki.SuperItem>().vacuumTime -= Time.deltaTime;
 
 			if (vacuumT <= 0.0f)
@@ -72,7 +40,6 @@ public class Vacuum : MonoBehaviour{
 				//吸いとったアイテムを保持する処理
 				//player.GetComponent<ShootStack>().Stack();
 				player.GetComponent<ShootStack>().VacuumObjects.Add(col.gameObject);
-				touch = false;
 				col.gameObject.SetActive(false);
 			}
         }
