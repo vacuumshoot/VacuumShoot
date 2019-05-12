@@ -4554,17 +4554,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181bdf5f98656f841b540c2b749654a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stackObjects:
-  - {fileID: 398107068}
-  - {fileID: 500714111}
-  - {fileID: 1583471443}
-  - {fileID: 33160510}
-  - {fileID: 1400074873}
-  - {fileID: 298052764}
-  - {fileID: 549929125}
-  - {fileID: 550691635}
-  - {fileID: 787716599}
-  - {fileID: 1670392083}
+  stackGameObjects:
+  - {fileID: 398107070}
+  - {fileID: 500714113}
+  - {fileID: 1583471445}
+  - {fileID: 33160512}
+  - {fileID: 1400074875}
+  - {fileID: 298052766}
+  - {fileID: 549929127}
+  - {fileID: 550691637}
+  - {fileID: 787716601}
+  - {fileID: 1670392085}
 --- !u!1 &2033258609
 GameObject:
   m_ObjectHideFlags: 0
