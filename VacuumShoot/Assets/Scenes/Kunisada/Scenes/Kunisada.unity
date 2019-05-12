@@ -2918,6 +2918,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779680116}
   m_CullTransparentMesh: 0
+--- !u!1 &1904140227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1904140229}
+  - component: {fileID: 1904140228}
+  m_Layer: 0
+  m_Name: EnemyApear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1904140228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904140227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d007ac4217847b193e4564a2dbbe8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy01: {fileID: 2140739576760187929, guid: 16dd7975c519a39488a9b32a68a17db4, type: 3}
+  Obj01: {fileID: 2140739576760187929, guid: 16dd7975c519a39488a9b32a68a17db4, type: 3}
+  Obj02: {fileID: 2140739576760187929, guid: 16dd7975c519a39488a9b32a68a17db4, type: 3}
+  movableArea: {fileID: 158732862}
+  summonsTime: 0
+--- !u!4 &1904140229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904140227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.08786951, y: 5.8309345, z: 4.2745953}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1913482671
 GameObject:
   m_ObjectHideFlags: 0
