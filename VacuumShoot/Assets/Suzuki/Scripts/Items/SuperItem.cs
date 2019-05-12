@@ -11,15 +11,16 @@
 	/// </summary>
 	public class SuperItem : MonoBehaviour
 	{
+		GameObject bossObj;// ボスの情報
+		public GameObject damageObj;
+
 		public float vacuumTime;	// 吸い込み時間
 		public int attackPower;     // アイテムが与えるダメージ
 
-		GameObject bossObj;// ボスの情報
 		float elapsedTime = 0.0f;// 経過時間
 
+		public int thisCombo = 1;// 攻撃コンボ(順番)
 		bool attacked = false;// ボスと接触したか
-
-		public int combo = 1;// 攻撃コンボ(順番)
 
 		// Start is called before the first frame update
 		void Start()
@@ -66,8 +67,16 @@
 			{
 				collision.gameObject.GetComponent<Boss>().HP -= attackPower;
 				attacked = true;
-				
-				Destroy(this.gameObject);
+
+				Vector3 pos = transform.position - new Vector3(30.0f, 0.0f, 0.0f);
+				DamageUI dam = GameObject.Instantiate(
+					damageObj,
+					pos,
+					new Quaternion(0.0f, 0.0f, 0.0f, 1.0f)).GetComponent<DamageUI>();
+				dam.damageInt = attackPower;
+				dam.comboInt = thisCombo;
+
+				Destroy(gameObject);
 			}
 		}
 	}

@@ -35,7 +35,7 @@ public class ShootStack : MonoBehaviour{
             VacuumObjects[i].SetActive(true);
 
 			// 自身のコンボ数(順番を格納)
-			VacuumObjects[i].GetComponent<Suzuki.SuperItem>().combo += i;
+			VacuumObjects[i].GetComponent<Suzuki.SuperItem>().thisCombo += i;
 			// コンボが上がるごとに与えるダメージが上昇する
 			int attack = VacuumObjects[i].GetComponent<Suzuki.SuperItem>().attackPower;
 			double up = damageUp[i] * attack;

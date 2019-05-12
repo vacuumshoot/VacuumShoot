@@ -3,6 +3,7 @@
 	using System.Collections;
 	using System.Collections.Generic;
 	using UnityEngine;
+	using UnityEngine.UI;
 
 	/// <summary>
 	/// ボスキャラのスクリプト
@@ -30,6 +31,11 @@
 			{
 				Destroy(this.gameObject);
 			}
+		}
+
+		public IEnumerator DamageAndCombo(int damage,int combo)
+		{
+			yield return null;
 		}
 	}
 }

@@ -44,13 +44,5 @@ public class Vacuum : MonoBehaviour{
 			}
         }
     }
-    //吸い取り不可能
-    private void OnTriggerExit(Collider col){
-        if (col.CompareTag("VacuumObject")){
-            touch = false;
-            vacuumTime = 0;
-            stackObj = null;
-        }
-    }
 
 }
