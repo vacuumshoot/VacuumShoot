@@ -1704,11 +1704,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2140739576760187929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e539ad274fb3f964aba8b0c84e97890d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5df64cb4d6f29ec48a58492c617421a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vacuumTime: 0
-  attackPower: 0
+  vacuumTime: 3
+  attackPower: 2
+  attackInterval: 10
 --- !u!54 &2140739576760187931
 Rigidbody:
   m_ObjectHideFlags: 0
